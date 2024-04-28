@@ -1268,6 +1268,11 @@
                 }
             }
             
+            .tech-know .tech-container .logo {
+                max-width: 84px;
+                height: 123px;
+            }
+            
             @media (max-width: 450px) {
                 html {
                     font-size: 50%;

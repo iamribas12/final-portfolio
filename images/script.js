@@ -49,7 +49,7 @@ ScrollReveal({
     // reset: true,
     distance: '80px',
     duration: 2000,
-    delay: 200
+    delay: 20
 });
 ScrollReveal().reveal('.home-content, .heading', { origin: 'top' });
 ScrollReveal().reveal('.home-img, .services-container, .portfolio-box', { origin: 'bottom' });
@@ -102,31 +102,5 @@ darkModeIcon.onclick = () => {
     audio.play();
     document.body.classList.toggle('dark-mode');
     hed.classList.toggle("header-2");
+    console.log(document.documentElement.scrollHeight)
 };
-
-
-//////////////////////////////////////////////////////////////////////
-
-// Get the audio element
-const audio = document.getElementById('myAudio');
-
-// Function to check scroll position and play audio
-const checkScroll = () => {
-    // Get the current scroll position
-    const scrollPosition = window.scrollY;
-
-    // Calculate 5% of the viewport height
-    const viewportHeight = window.innerHeight;
-    const fivePercentHeight = 0.05 * viewportHeight;
-
-    // If scroll position is greater than or equal to 5% of viewport height, play audio
-    if (scrollPosition >= fivePercentHeight) {
-        audio.play();
-
-        // Remove the event listener after playing the audio once
-        window.removeEventListener('scroll', checkScroll);
-    }
-}
-
-// Add scroll event listener to trigger checkScroll function
-window.addEventListener('scroll', checkScroll);
